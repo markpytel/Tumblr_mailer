@@ -1,0 +1,36 @@
+readme.txt
+
+To use this node.js application you must do the following things first:
+
+1. Have a tumblr blog with posts on it
+2. Log into tumblr, complete the information at the following link to get an API key
+	https://www.tumblr.com/oauth/apps
+3. Access the api key information at the following link
+	https://api.tumblr.com/console/calls/user/info
+4. Create an account at Mandrill
+	https://mandrill.com/signup/
+5. Once you are logged in you can go to the dashboard and click the GET API KEYS button at the bottom left, then click ADD API KEY.
+
+
+
+Once you've completed the steps above, you need to edit the tumblr_mailer.js, email_template.ejs and friend_list.csv file with your own personal information. Please follow the steps below.
+
+1. Open the friend_list.csv file and enter your friends contact information below the first line:
+
+firstName,lastName,numMonthsSinceContact,emailAddress
+First,Last,0,email@address.com 
+
+
+2. Open the tumblr_mailer.js file and do the following:
+
+	a: Enter your mandrill api key on line 5
+	b: Enter your tumblr api keys on lines 9-12
+	c: Enter your name, email address and email subject on lines 71-73
+	d: Enter the url of your tumblr blog on line 90
+
+3. The app is currently designed to search for posts that are at most 7 days old, this can be modified by editing the variable on line 94.
+
+4. Open email_template.ejs and on line 24 enter your name.
+
+
+Once you've entered the information described above you can execute the file by using the command line to go to the directory the files are located and typing 'node tumblr_mailer.js' and hitting enter.
